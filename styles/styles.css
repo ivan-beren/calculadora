@@ -25,3 +25,28 @@ body {
     border-radius: 10px 10px 0 0;
 }
 
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #f4f4f4;
+    gap: 5px;
+    padding: 10px;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #f4f4f4;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.operator {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
