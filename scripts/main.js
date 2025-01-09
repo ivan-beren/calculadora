@@ -1,4 +1,4 @@
-const display = document.getElementById("display");
+const display = document.querySelector(".display");
 let currentInput = "";
 let operator = null;
 let previousInput = "";
@@ -16,7 +16,7 @@ document.querySelectorAll(".btn").forEach(button => {
         }else if(action === "calculate"){
             if (currentInput && previousInput && operator) {
                 const result = eval(`${previousInput} ${operator} ${currentInput}`);
-                display.content = result;
+                display.textContent = result;
                 currentInput = result.toString();
                 previousInput = "";
                 operator = null;
