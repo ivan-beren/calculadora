@@ -7,6 +7,7 @@ document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", () => {
         const value = button.dataset.value;
         const action = button.dataset.action;
+        
 
         if(action === "clear") {
             currentInput = "";
@@ -16,6 +17,7 @@ document.querySelectorAll(".btn").forEach(button => {
         }else if(action === "calculate"){
             if (currentInput && previousInput && operator) {
                 const result = eval(`${previousInput} ${operator} ${currentInput}`);
+                console.log("Resultado: ",result);
                 display.textContent = result;
                 currentInput = result.toString();
                 previousInput = "";
@@ -23,10 +25,13 @@ document.querySelectorAll(".btn").forEach(button => {
             }
         }else if(["+","-","*","/"].includes(value)){
             operator = value;
+            console.log("Operador: ",operator)
             previousInput = currentInput;
             currentInput = "";
         }else{
             currentInput += value;
+            
+            console.log("Current Input: ",currentInput);
             display.textContent = currentInput;
         }
     });
